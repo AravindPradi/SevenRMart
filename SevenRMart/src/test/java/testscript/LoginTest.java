@@ -6,7 +6,7 @@ import utility.ExcelUtility;
 
 public class LoginTest extends Base {
     
-    @Test(groups = {"smoke"}, priority = 1)
+    @Test(description = "This is to verify valid credentials", groups = {"smoke"}, priority = 1)
     public void validCredetials() 
     {
     	String username = ExcelUtility.getString(1, 0, "LoginPage");
@@ -22,7 +22,7 @@ public class LoginTest extends Base {
     }
     
     
-    @Test(groups = {"regression"})
+    @Test(description = "This is to verify user login with correct username and wrong password",groups = {"regression"}, priority = 2)
     public void verifyUserLoginWithCorrectUsernameAndWrongPassword() {
     	String username = "admin";
     	String password = "wrongpassword";
@@ -35,7 +35,7 @@ public class LoginTest extends Base {
     	
     }
     
-    @Test(description = "This is to verify" , groups= {"smoke", "regression"})
+    @Test(description = "This is to verify user login with incorrect username and incorrect password" , groups= {"smoke", "regression"}, priority = 3)
     public void verifyUserLoginWithIncorrectUsernameAndIncorrectPassword() {
     	String username = "wrongusername";
     	String password = "wrongpassword";
@@ -48,7 +48,7 @@ public class LoginTest extends Base {
     	
     }
     
-    @Test
+    @Test(description = "This is to verify the user login with incorrect username and correct password",groups = {"regression"}, priority = 4)
     public void verifyUserLoginWithIncorrectUsernameAndCorrectPassword() {
     	String username = "wrongusername";
     	String password = "admin";

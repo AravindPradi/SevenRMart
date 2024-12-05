@@ -11,7 +11,7 @@ import constants.Constants;
 
 public class SubCategoryTest extends Base {
 
-	@Test
+	@Test(description = "This is to verify user able to access, view and add a new subcategory", groups = {"regression"})
 	public void verifyUserAbleToViewAndAddNewSubCategory() {
 		String username = ExcelUtility.getString(1, 0, "LoginPage");
 		String password = ExcelUtility.getString(1, 1, "LoginPage");

@@ -7,7 +7,7 @@ import utility.LoginUtility;
 
 public class CategoryTest extends Base {
 
-	@Test
+	@Test(description = "This is to verify user to access Category page, view and search", groups = {"regression"})
 	public void verifyUserAbleToViewAndSearchInCategoryPage() {
 		String username = "admin";
 		String password = "admin";

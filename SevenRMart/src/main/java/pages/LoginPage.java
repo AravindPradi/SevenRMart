@@ -5,13 +5,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utility.PageUtility;
 
 public class LoginPage {
 	
 	public WebDriver driver;
+	public PageUtility pageutility;
 	
 	public LoginPage(WebDriver driver) {    //constructor
 		this.driver = driver;
+	
 		PageFactory.initElements(driver,this);
 	}
 	
@@ -29,11 +32,12 @@ public class LoginPage {
 	}
 	
 	public void enterPasswordOnPasswordField(String password) {
+		
 		passwordField.sendKeys(password);
 	}
 	
 	public void clickSignInButton() {
-		signinbutton.click();
+		pageutility.actionClick(signinbutton);
 	}
 	
 	public boolean isLoginSuccess() {

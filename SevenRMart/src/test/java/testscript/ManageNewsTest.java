@@ -8,7 +8,7 @@ import utility.RandomUtility;
 
 public class ManageNewsTest extends Base {
 
-	@Test
+	@Test(description = "This is to verify user to access manage news page, view and add a new news", groups = {"regression"})
 	public void verifyUserToViewAndAddInManageNewsPage() {
 		String username = "admin";
 		String password = "admin";
