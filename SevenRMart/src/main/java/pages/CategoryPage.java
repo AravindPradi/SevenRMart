@@ -14,7 +14,7 @@ public class CategoryPage {
 
 	public CategoryPage(WebDriver driver) {
 		this.driver = driver;
-		this.pageutility = new PageUtility(driver);
+		this.pageutility = new PageUtility();
 		PageFactory.initElements(driver, this);
 	}
 
@@ -30,7 +30,7 @@ public class CategoryPage {
 	private WebElement searchCategoryButtonClick;
 
 	public void clickCategoryMenu(String url) {
-		pageutility.navigateToURL(url);
+		pageutility.navigateToURL(url, driver);
 		clickCategoryMenu.click();
 	}
 

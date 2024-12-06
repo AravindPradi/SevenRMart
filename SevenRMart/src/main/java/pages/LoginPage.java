@@ -37,7 +37,8 @@ public class LoginPage {
 	}
 	
 	public void clickSignInButton() {
-		pageutility.actionClick(signinbutton);
+		pageutility = new PageUtility();
+		pageutility.actionClick(driver, signinbutton);
 	}
 	
 	public boolean isLoginSuccess() {

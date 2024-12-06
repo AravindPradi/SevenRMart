@@ -12,5 +12,12 @@ public class RandomUtility {
 	public String createRandomNews() {
 		return faker.gameOfThrones().character();
 	}
-
+	 
+	public String createRandomUsername() {
+		return faker.name().username();
+	}
+	
+	public String createRandomPassword() {
+		return faker.numerify("#####");
+	}
 }

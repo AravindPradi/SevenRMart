@@ -1,5 +1,6 @@
 package testscript;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import utility.ExcelUtility;
@@ -35,10 +36,9 @@ public class LoginTest extends Base {
     	
     }
     
-    @Test(description = "This is to verify user login with incorrect username and incorrect password" , groups= {"smoke", "regression"}, priority = 3)
-    public void verifyUserLoginWithIncorrectUsernameAndIncorrectPassword() {
-    	String username = "wrongusername";
-    	String password = "wrongpassword";
+    @Test(dataProvider = "InvalidLoginData", description = "This is to verify user login with incorrect username and incorrect password" , groups= {"smoke", "regression"}, priority = 3)
+    public void verifyUserLoginWithIncorrectUsernameAndIncorrectPassword(String username, String password) {
+    	
     	LoginPage loginpage = new LoginPage(driver);
     	loginpage.enterUsernameOnUsernameField(username);
     	loginpage.enterPasswordOnPasswordField(password);
@@ -60,5 +60,16 @@ public class LoginTest extends Base {
     	Assert.assertTrue(isRedirectedToDashboard, "User is able to login with invalid credentials");
     	
     }
-     
+    
+    
+    @DataProvider(name = "InvalidLoginData")
+    public Object[][] getDataFromDataProvider()
+    {
+    	return new Object[][] {
+    		
+    		new Object[] {"abc","abc"},
+    		new Object[] {"123","123"}
+    	};
+    }
+    
 } 

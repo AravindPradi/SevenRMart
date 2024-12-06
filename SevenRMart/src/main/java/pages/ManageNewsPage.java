@@ -13,7 +13,7 @@ public class ManageNewsPage {
     public ManageNewsPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
-        this.pageutility = new PageUtility(driver);
+        this.pageutility = new PageUtility();
     }
     
     @FindBy(xpath = "//a[@class=' nav-link' and .//p[text()='Manage product']]") private WebElement clickManageNewsMenu;
@@ -30,7 +30,7 @@ public class ManageNewsPage {
     }
     
     public void isManageNewsPage(String url) {
-    	pageutility.navigateToURL(url);
+    	pageutility.navigateToURL(url, driver);
     	manageNewsPage.isDisplayed();
     }
     
