@@ -2,12 +2,13 @@ package testscript;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
 import pages.CategoryPage;
 import utility.LoginUtility;
 
 public class CategoryTest extends Base {
 
-	@Test(description = "This is to verify user to access Category page, view and search", groups = {"regression"})
+	@Test(description = "This is to verify user to access Category page, view and search", groups = { "regression" })
 	public void verifyUserAbleToViewAndSearchInCategoryPage() {
 		String username = "admin";
 		String password = "admin";

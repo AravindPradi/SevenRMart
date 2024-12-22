@@ -2,16 +2,18 @@ package testscript;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import constants.Constants;
 import pages.SubCategoryPage;
 import utility.ExcelUtility;
 import utility.FileUploadUtility;
 import utility.LoginUtility;
 import utility.RandomUtility;
-import constants.Constants;
 
 public class SubCategoryTest extends Base {
 
-	@Test(description = "This is to verify user able to access, view and add a new subcategory", groups = {"regression"})
+	@Test(description = "This is to verify user able to access, view and add a new subcategory", groups = {
+			"regression" })
 	public void verifyUserAbleToViewAndAddNewSubCategory() {
 		String username = ExcelUtility.getString(1, 0, "LoginPage");
 		String password = ExcelUtility.getString(1, 1, "LoginPage");

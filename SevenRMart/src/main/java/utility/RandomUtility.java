@@ -1,7 +1,6 @@
 package utility;
 
 import com.github.javafaker.Faker;
-import com.github.javafaker.PhoneNumber;
 
 public class RandomUtility {
 	Faker faker = new Faker();
@@ -38,10 +37,10 @@ public class RandomUtility {
 	public int createRandomAmount() {
 		return faker.number().numberBetween(50, 200);
 	}
-	
+
 	public int createRandomTime() {
 		return faker.number().numberBetween(7, 20);
-		
+
 	}
 
 }

@@ -15,7 +15,7 @@ public class ExcelUtility {
 	public static XSSFWorkbook wb;
 	public static XSSFSheet sh;
 	public static FileInputStream f;
-	
+
 	public static String getString(int i, int j, String sheet) {
 		String file_path = Constants.TESTDATAFILE;
 		try {
@@ -35,9 +35,9 @@ public class ExcelUtility {
 		Cell c = r.getCell(j);
 		return c.getStringCellValue();
 	}
-	
+
 	public static String getString(int i, int j, String sheet, String file_path) {
-		
+
 		try {
 			f = new FileInputStream(file_path);
 		} catch (FileNotFoundException e) {

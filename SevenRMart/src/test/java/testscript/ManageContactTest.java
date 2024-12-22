@@ -7,16 +7,15 @@ import utility.ExcelUtility;
 import utility.LoginUtility;
 
 public class ManageContactTest extends Base {
-	
-	
-	@Test(description = "This is to verify user to access contact us  page, view and edit", groups = {"regression"})
+
+	@Test(description = "This is to verify user to access contact us  page, view and edit", groups = { "regression" })
 	public void verifyUserAbleToAccessManageContactAndEdit() {
 		String username = ExcelUtility.getString(1, 0, "LoginPage");
 		String password = ExcelUtility.getString(1, 1, "LoginPage");
-		
+
 		LoginUtility loginUtility = new LoginUtility(driver);
 		loginUtility.succesfulLogin(username, password);
-		
+
 		ManageContactPage manageContact = new ManageContactPage(driver);
 		manageContact.isMangeContactPage();
 		manageContact.clickActionButton();
@@ -29,6 +28,4 @@ public class ManageContactTest extends Base {
 		manageContact.isUpdateButton();
 	}
 
-		
 }
-

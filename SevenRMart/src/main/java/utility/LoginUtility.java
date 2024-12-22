@@ -1,6 +1,7 @@
 package utility;
 
 import org.openqa.selenium.WebDriver;
+
 import pages.LoginPage;
 
 public class LoginUtility {
@@ -11,7 +12,6 @@ public class LoginUtility {
 		this.driver = driver;
 	}
 
-	
 	public void succesfulLogin(String username, String password) {
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUsernameOnUsernameField(username);
